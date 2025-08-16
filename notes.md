@@ -15,3 +15,5 @@ Embeddings enable generalization and few-shot detection
 
 SimCLR :
 not a model itself but the concept , you take your raws of data and for each find ways to create different views of it , pass then to encoder to get the embeddings
+
+
