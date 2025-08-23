@@ -31,6 +31,7 @@ we are kinda of tricky the dummy model into being like see those two are close ,
 
 unlike simclr which uses constracite loss , aka it pushes far ne inputs (aka an input and its views) and push far the negs , in byol we say i dont care about negs and only adjust accordng
 to the poss
+(the loss is between the result of the projecotr of target and predictor of online)
 
 ## how the two networks work together
 
