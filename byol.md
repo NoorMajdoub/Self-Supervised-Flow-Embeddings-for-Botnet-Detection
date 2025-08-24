@@ -42,3 +42,10 @@ Target = the positive pair
 Softmax over similarities gives probabilities of each embedding being the positive
 
 Cross-entropy penalizes the model if the positive isn’t most similar
+
+
+
+** what i will be doing **
+well the byol architecure will stay as it is what will happe is te constractive loss would be integrated in thge loss of th byol system 
+the core idea behind byol is that it doesnt consider the negative pairs 
+methode 1 very simple we just combine both losses in one formula , l=p*byolloss +(1-p)*cons loss
