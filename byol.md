@@ -44,6 +44,10 @@ Softmax over similarities gives probabilities of each embedding being the positi
 Cross-entropy penalizes the model if the positive isn’t most similar
 
 
+**dat question ist , if the strengh of byol is by working only with the pos pairs why try merge both , since constractive loss works with pushing together pos pairs and pushing away neg pais
+
+the thing is since byol doesnt work with neg pairs , it isnt as discriminaitve as it should be , the relying on temerature to make it strickter isnt enaugh , by working on the neg pairs we can enforce the that the mebeddings when they are of different classes they are as far as they can be, by adding tte constarctive loss we strengthen the discremenivative pressure
+
 
 ** what i will be doing **
 well the byol architecure will stay as it is what will happe is te constractive loss would be integrated in thge loss of th byol system 
