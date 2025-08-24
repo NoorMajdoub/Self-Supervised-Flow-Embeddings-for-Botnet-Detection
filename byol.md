@@ -11,4 +11,34 @@ deep dive
 
 
 ntxent loss
- the core idea is to allow to model to deduce if an image is derived from another image
+NT-Xent as “cross-entropy with extra steps”
+
+Start with embeddings
+
+For each sample in the batch, compute embeddings of its two augmented views: z_i and z_j.
+
+Compute cosine similarity
+
+Between all embeddings in the batch:
+
+Positive pair: sim(z_i, z_j) (same sample, different view)
+
+Negative pairs: sim(z_i, z_k) for all other samples k ≠ i
+
+Apply temperature scaling
+
+Divide all similarities by τ:
+
+In SimCLR, τ < 1 → amplifies differences, makes positives stand out more sharply from negatives
+
+Cross-entropy step
+
+Treat it as a multi-class classification problem:
+
+“Classes” = all embeddings in the batch
+
+Target = the positive pair
+
+Softmax over similarities gives probabilities of each embedding being the positive
+
+Cross-entropy penalizes the model if the positive isn’t most similar
