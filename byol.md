@@ -41,7 +41,7 @@ SimCLR alone can give embeddings that are “over-separated” (good discriminat
 
 Hybrid balances both.
 
-** what i will be doing **
+### what i will be doing
 The byol architecure will stay as it is what will happe is te constractive loss would be integrated in thge loss of th byol system somewhere , somehow
 ### Methode 1 
 very simple we just combine both losses in one formula , 
@@ -49,6 +49,13 @@ l=p*byolloss +(1-p)*cons loss
 p is a parameter than can be optimized later but initially i will just keep it 0.5 so 50/50 importance to each loss
 
 
-methode 2
+### methode 2
+The first idea i thought of is based on the idea that in the byol architecture , the target network works as the teacher for the online network , but it isnt using gradient to update its weight , only in the online network would that be happeing , so the idea that the projector of the target would use the constractive loss to better seperate classes and later on the online netowork would learn from it isnt sth that will work.. :3 
+So what we should stuck with is using the constractive loss in the online network
+sooooooooo we stick to working on the online network , 
+Two augmented views of each sample go through the online network (encoder → projector → predictor) and the target network (encoder → projector). The online predictor output is used for both: (1) BYOL-style alignment with the target projector output, and (2) contrastive loss across the batch to separate different samples, combining stability and discriminative power in one embedding.
+the constraxcive loss is working with the result of the projector and wors tp seperate the different embedding of classes in the projector level
 
 
+
+in the previous methode 1 the losses (aligment /discrimination impact is working with the predictor , in the second methode the discrimantion is happenign in the projector level and the alogment is in the predictor level ) both in the online network
