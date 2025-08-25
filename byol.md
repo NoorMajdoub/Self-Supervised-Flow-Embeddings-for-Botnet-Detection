@@ -48,8 +48,20 @@ Cross-entropy penalizes the model if the positive isn’t most similar
 
 the thing is since byol doesnt work with neg pairs , it isnt as discriminaitve as it should be , the relying on temerature to make it strickter isnt enaugh , by working on the neg pairs we can enforce the that the mebeddings when they are of different classes they are as far as they can be, by adding tte constarctive loss we strengthen the discremenivative pressure
 
+the byol never says "we need to push far those pics (we dont take neg in consideration in the loss function) so by adding the constractove loss we can say "push those types of stuff as much as you can aka those two types give them types representations that are as different as possible they are not the same")
+
+BYOL alone can give embeddings that are “blurred” between classes (good invariance, weak discrimination).
+
+SimCLR alone can give embeddings that are “over-separated” (good discrimination, sometimes brittle invariance).
+
+Hybrid balances both.
 
 ** what i will be doing **
 well the byol architecure will stay as it is what will happe is te constractive loss would be integrated in thge loss of th byol system 
 the core idea behind byol is that it doesnt consider the negative pairs 
 methode 1 very simple we just combine both losses in one formula , l=p*byolloss +(1-p)*cons loss
+
+
+methode 2
+
+here must do a reminder , what do byol via its two netwrosk aim to do ? make the result of the online network (the result of the repdictor same as the result of the target projector )
