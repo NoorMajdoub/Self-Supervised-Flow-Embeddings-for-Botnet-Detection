@@ -29,4 +29,3 @@ This project explores **self-supervised learning** techniques for image represen
 
 
 
-If you want, I can also write a **super-short 5–6 line version** suitable for GitHub so it’s even more “readable at a glance.” Do you want me to do that?
