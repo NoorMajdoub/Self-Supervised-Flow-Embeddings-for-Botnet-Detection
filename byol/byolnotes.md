@@ -29,7 +29,7 @@ we are kinda of tricky the dummy model into being like see those two are close ,
 ## byol loss :
 
 
-unlike simclr which uses constracite loss , aka it pushes far ne inputs (aka an input and its views) and push far the negs , in byol we say i dont care about negs and only adjust accordng
+unlike simclr which uses constracite loss , aka it pushes far ne inputs (aka an input and its views) and push far the negativs , in byol we say i dont care about negativss and only adjust accordng
 to the poss
 (the loss is between the result of the projecotr of target and predictor of online)
 
@@ -42,4 +42,4 @@ we have two networks , online and target , we take an input (batch) and make two
 
 ## why this works
 
-sth feels off when i first red about it , yes it do ...cause we aitn working with no negs , it is kinda new to me at least that the loss is kinda in the batch itself and its versions 
+sth feels off when i first red about it , yes it do ...cause we aitn working with no negativss , it is kinda new to me at least that the loss is kinda in the batch itself and its versions 
